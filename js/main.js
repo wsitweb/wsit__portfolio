@@ -81,9 +81,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
         let location = {};
               location.y = event.beta;
               location.x = event.gamma;
-      	document.documentElement.style.setProperty('--mouse-x', location.x*3000);
-      	document.documentElement.style.setProperty('--mouse-y', location.y*3000);
-            document.querySelector('.point').innerHTML = location.x*600;
-            document.querySelector('.point:last-child').innerHTML = location.y*600;
+      	document.documentElement.style.setProperty('--mouse-x', location.x*600);
+      	document.documentElement.style.setProperty('--mouse-y', location.y*600);
       });
 };
