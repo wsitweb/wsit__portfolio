@@ -46,12 +46,17 @@ $(document).ready(function(){
 	$(document).mousemove(function(event){
 		var x = event.pageX;
 		var y = event.pageY;
-            document.documentElement.style.setProperty('--mouse-x', x);
-            if(y < window.innerHeight){
-            document.documentElement.style.setProperty('--mouse-y', y);
-            }else{
-                  positionDefolt();
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+    		.test(navigator.userAgent)) {
+
+		} else {
+			document.documentElement.style.setProperty('--mouse-x', x);
+			    if(y < window.innerHeight){
+			    document.documentElement.style.setProperty('--mouse-y', y);
+			    }else{
+                  	positionDefolt();
             }
+		};
 	});
 });
 positionDefolt();
