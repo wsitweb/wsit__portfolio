@@ -81,7 +81,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
         let location = {};
               location.y = event.beta;
               location.x = event.gamma;
-      	document.documentElement.style.setProperty('--mouse-x', location.x*20);
-      	document.documentElement.style.setProperty('--mouse-y', location.y*20);
+      	document.documentElement.style.setProperty('--mouse-x', location.x*300);
+      	document.documentElement.style.setProperty('--mouse-y', location.y*300);
       });
 };
