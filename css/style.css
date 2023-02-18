@@ -1491,3 +1491,8 @@ footer .footer .footer__copy {
     transform: translate(6vw);
   }
 }
+.text{
+ color: #000;
+ font-size: 50px;
+ background-color: #fff; 
+}
