@@ -85,6 +85,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
       	document.documentElement.style.setProperty('--mouse-y', location.y*3000);
             document.querySelector('.point').innerHTML = location.x*3000;
             document.querySelector('.point:last-child').innerHTML = location.y*3000;
+            document.querySelector('.text').innerHTML = `${location.x*3000} : ${location.y*3000}`;
       });
 };
-document.querySelector('.text').innerHTML = `${location.x*3000} : ${location.y*3000}`;
