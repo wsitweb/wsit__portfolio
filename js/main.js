@@ -47,17 +47,7 @@ $(document).ready(function(){
 		var x = event.pageX;
 		var y = event.pageY;
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
-    		.test(navigator.userAgent)) {
-		    
-window.addEventListener('deviceorientation', ()=>{
-  let location = {};
-        location.y = event.beta;
-        location.x = event.gamma;
-	document.documentElement.style.setProperty('--mouse-x', location.x*2);
-	document.documentElement.style.setProperty('--mouse-y', location.y*3);
-});		
-		    
-		} else {
+    		.test(navigator.userAgent)) {} else {
 			document.documentElement.style.setProperty('--mouse-x', x);
 			    if(y < window.innerHeight){
 			    document.documentElement.style.setProperty('--mouse-y', y);
@@ -85,3 +75,13 @@ function burgerClick(){
             document.body.removeAttribute("style");
       }
 }
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+    		.test(navigator.userAgent)) {
+		    
+window.addEventListener('deviceorientation', ()=>{
+  let location = {};
+        location.y = event.beta;
+        location.x = event.gamma;
+	document.documentElement.style.setProperty('--mouse-x', location.x*2);
+	document.documentElement.style.setProperty('--mouse-y', location.y*3);
+});
