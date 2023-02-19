@@ -80,8 +80,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 		    
       window.addEventListener('deviceorientation', ()=>{
         let loc = {};
-              loc.y = event.beta;
-              loc.x = event.gamma;
+              loc.y = Math.floor(event.beta);
+              loc.x = Math.floor(event.gamma);
       	document.documentElement.style.setProperty('--mouse-x', loc.x*10);
       	document.documentElement.style.setProperty('--mouse-y', (loc.y - 100) *30);
             document.querySelector('.text').innerHTML = `${loc.y} y ${loc.x} x`;
