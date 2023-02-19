@@ -82,8 +82,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
         let loc = {};
               loc.y = Math.floor(event.beta);
               loc.x = Math.floor(event.gamma);
-      	document.documentElement.style.setProperty('--mouse-x', loc.x*10);
-      	document.documentElement.style.setProperty('--mouse-y', (loc.y - 100) *30);
-            document.querySelector('.text').innerHTML = `${loc.y} y ${loc.x} x`;
+      	document.documentElement.style.setProperty('--mouse-x', loc.x*16);
+      	document.documentElement.style.setProperty('--mouse-y', (loc.y - 50) *24);
+            // document.querySelector('.text').innerHTML = `${loc.y} y ${loc.x} x`;
       });
 };
