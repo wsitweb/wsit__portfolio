@@ -74,14 +74,16 @@ function burgerClick(){
             document.body.removeAttribute("style");
       }
 }
+
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
     		.test(navigator.userAgent)) {
 		    
       window.addEventListener('deviceorientation', ()=>{
-        let location = {};
-              location.y = event.beta;
-              location.x = event.gamma;
-      	document.documentElement.style.setProperty('--mouse-x', location.x*60);
-      	document.documentElement.style.setProperty('--mouse-y', location.y*60);
+        let loc = {};
+              loc.y = event.beta;
+              loc.x = event.gamma;
+      	document.documentElement.style.setProperty('--mouse-x', loc.x*10);
+      	document.documentElement.style.setProperty('--mouse-y', loc.y*20);
+            document.querySelector('.text').innerHTML = 'loc';
       });
 };
