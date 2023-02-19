@@ -83,7 +83,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
               loc.y = event.beta;
               loc.x = event.gamma;
       	document.documentElement.style.setProperty('--mouse-x', loc.x*10);
-      	document.documentElement.style.setProperty('--mouse-y', loc.y*30);
+      	document.documentElement.style.setProperty('--mouse-y', (loc.y - 100) *30);
             document.querySelector('.text').innerHTML = `${loc.y} y ${loc.x} x`;
       });
 };
