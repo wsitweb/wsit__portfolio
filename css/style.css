@@ -493,8 +493,8 @@ main {
 .preview.index .points {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: calc(var(--index) * 5);
-  height: calc(var(--index) * 2.5);
+  width: calc(var(--index) * 8);
+  height: calc(var(--index) * 4);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -502,8 +502,8 @@ main {
   top: calc(50% + (var(--index)) * -6 + var(--mouse-y) * 1px / 30);
 }
 .preview.index .points .point {
-  width: calc(var(--index) * 1.2);
-  height: calc(var(--index) * 1.2);
+  width: calc(var(--index) * 1.8);
+  height: calc(var(--index) * 1.8);
   background: white;
   border-radius: calc(var(--index) * 1.5);
   box-shadow: calc(var(--index) * 3) calc(var(--index) * 3) calc(var(--index) * 3) rgba(0, 0, 0, 0.4745098039);
