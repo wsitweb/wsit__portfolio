@@ -32,8 +32,8 @@ body{
 }
 .preview.index.gyroscope{
     .eye{
-        background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 160)
-                                calc(-16% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 160);
+        background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * -1px / 100)
+                                calc(-12% + (var(--index)) * 3.6 + var(--mouse-y) * -1px / 100);
         }
     .points{
         left: calc(50% + var(--mouse-x) * 1px / 150);
@@ -46,6 +46,7 @@ body{
                     url(../img/prev-2.png)
                         calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * -1px / 280)
                         calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * -1px / 100) no-repeat;
+        background-size: calc(var(--index) * 20);
     }
 }
 .preloader{
