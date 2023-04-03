@@ -64,10 +64,9 @@ function burgerClick(){
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
     		.test(navigator.userAgent)) {
-		    
+      document.querySelector('.preview.index').classList.add('gyroscope');
       window.addEventListener('deviceorientation', ()=>{
         let loc = {};
-        document.querySelector('.preview.index').classList.add('gyroscope');
             //   loc.y = Math.floor(event.beta * -1);
             //   loc.x = Math.floor(event.gamma* -1);
               loc.y = (event.beta * -1);
