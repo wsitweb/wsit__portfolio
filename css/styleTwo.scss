@@ -30,9 +30,15 @@ body{
     display: none;
     
 }
-.preview.index.gyroscope .eye{
-    background-position:    calc(43% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 260)
-                            calc(-14% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 260);
+.preview.index.gyroscope{
+    .eye{
+        background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 160)
+                                calc(-16% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 160);
+        }
+    .points{
+        left: calc(50% + var(--mouse-x) * 1px / 150);
+        top: calc(50% + (var(--index)) * -6 + var(--mouse-y) * 1px / 130);
+    }  
 }
 .preloader{
     transition: 1s opacity ease;
