@@ -16,10 +16,9 @@ body{
     top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 240);
     left: calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 280);
   
-    background-color: #14EEEE;
+    background-color: #000000;
     width:  calc(var(--index) * 17.0);
     height: calc(var(--index) * 17.0);
-    background-color: #14EEEE;
     
     mask: url(../img/mask-eye.png) no-repeat    calc(48% + (var(--index)) * 2.0)
                                                 calc(9% + (var(--index)) * 3.6);
@@ -30,6 +29,10 @@ body{
 ::-webkit-scrollbar {
     display: none;
     
+}
+.preview.index.gyroscope .eye{
+    background-position:    calc(43% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 260)
+                            calc(-14% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 260);
 }
 .preloader{
     transition: 1s opacity ease;

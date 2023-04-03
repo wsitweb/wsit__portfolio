@@ -67,6 +67,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 		    
       window.addEventListener('deviceorientation', ()=>{
         let loc = {};
+        document.querySelector('.preview.index').classList.add('gyroscope');
             //   loc.y = Math.floor(event.beta * -1);
             //   loc.x = Math.floor(event.gamma* -1);
               loc.y = (event.beta * -1);
