@@ -907,7 +907,7 @@ main {
 }
 @media (max-width: 425px) {
   .list .list__blocks .list__block {
-    max-height: 380px;
+    max-height: 260px;
   }
 }
 .list .list__blocks .list__block .list__block-content {
@@ -1291,14 +1291,6 @@ footer .footer .footer__button:hover, footer .footer .footer__button:focus foote
 }
 footer .footer .footer__button:hover{
   scale: 1.2;
-}
-@media (max-width: 425px) {
-  footer .footer .footer__button {
-    background-size: 40%;
-    height: 100px;
-    min-width: 100px;
-    transform: translate(0, -100%);
-  }
 }
 footer .footer .footer__social {
   height: 100%;
