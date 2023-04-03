@@ -10,16 +10,16 @@ body{
     position: absolute;
     background: url(../img/eye.png) no-repeat  ;
     background-position:    calc(43% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 60)
-                            calc(-14% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 60);
+                            calc(-16% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 30);
     background-size: 40%;
 
-    top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 240);
-    left: calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 280);
+    top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 90);
+    left: calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 50);
   
     background-color: #000000;
     width:  calc(var(--index) * 17.0);
     height: calc(var(--index) * 17.0);
-    
+    transition: left 0.2s,top 0.2s, background-position 0.05s;
     mask: url(../img/mask-eye.png) no-repeat    calc(48% + (var(--index)) * 2.0)
                                                 calc(9% + (var(--index)) * 3.6);
     mask-size: 26%;
@@ -30,10 +30,10 @@ body{
 }
 .preview.index.gyroscope{
     .eye{
-        background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 160)
-                                calc(30% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 160);
-        top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 50);
-        left: calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 50);
+        background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 100)
+                                calc(10% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 140);
+        top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 40);
+        left: calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 60);
     }
     .points{
         left: calc(50% + var(--mouse-x) * 1px / 50);
@@ -41,11 +41,11 @@ body{
     }
     .mask{
         background: url(../img/prev-1.png)
-                        calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 60)
-                        calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 60) no-repeat,
+                        calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 50)
+                        calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 70) no-repeat,
                     url(../img/prev-2.png)
-                        calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 50)
-                        calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 50) no-repeat;
+                        calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 40)
+                        calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 60) no-repeat;
         background-size: calc(var(--index) * 20);
     }
 }
