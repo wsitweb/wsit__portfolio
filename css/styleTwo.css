@@ -1,5 +1,5 @@
 body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 :root {
@@ -32,4 +32,74 @@ body {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.preloader {
+  -webkit-transition: 1s opacity ease;
+  -o-transition: 1s opacity ease;
+  transition: 1s opacity ease;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(27, 27, 27);
+  position: fixed;
+  overflow: hidden;
+  z-index: 1000000;
+}
+.preloader__text {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 34px;
+  line-height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 25px;
+}
+.preloader__progress {
+  text-align: center;
+  width: 20ch;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, 200%);
+      -ms-transform: translate(-50%, 200%);
+          transform: translate(-50%, 200%);
+  text-transform: none;
+  letter-spacing: 10px;
+  overflow: hidden;
+  -webkit-animation: loading 2s infinite steps(4);
+          animation: loading 2s infinite steps(4);
+  -webkit-transition: 0;
+  -o-transition: 0;
+  transition: 0;
+}
+.preloader.disable {
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    width: 14ch;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 14ch;
+  }
+}
+@-webkit-keyframes opasity {
+  0% {
+    opacity: 0.2;
+  }
+}
+@keyframes opasity {
+  0% {
+    opacity: 0.2;
+  }
 }

@@ -20,7 +20,6 @@ window.addEventListener('scroll', () => {
             $('header.сling').css('opacity','1');
       }else if(scrollPosition() < lastScrol && containHide() && scrollPosition() < window.innerHeight){
             $('header.сling').css('opacity','0');
-            console.log(1);
             function AddOpacity(){
                   $('header').css('opacity','1');
             }
@@ -80,7 +79,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 
 SmoothScroll({
       // Время скролла 400 = 0.4 секунды
-      animationTime    : 500,
+      animationTime    : 800,
       // Размер шага в пикселях 
       stepSize         : 75,
   
@@ -109,6 +108,65 @@ SmoothScroll({
 $('a[href*="#preview"]').on('click', function() {
       $('html, body').animate({
         scrollTop: $($.attr(this, 'href')).offset().top
-      }, 1000);
+      }, 2000);
       return false;
 });
+
+let preloader = document.querySelector('.preloader');
+window.addEventListener('load', ()=>{
+      document.body.style.overflowY = 'auto';
+      preloader.style.opacity = '0';
+      setTimeout(function(){preloader.style.display = 'none';}, 1000);
+})
+
+gsap.registerPlugin(ScrollTrigger);
+
+if(!ScrollTrigger.isTouch){
+    window.addEventListener('load', ()=>{
+
+        let animetionElementOne = '.preview';
+        let animetionElementsLeft = document.querySelectorAll('.list__block:nth-child(odd)');
+        let animetionElementsRight = document.querySelectorAll('.list__block:nth-child(even)');
+        
+        gsap.fromTo(animetionElementOne, {opacity: 1, transform: 'scale(1)', },
+            {
+                opacity: 0,
+                transform: 'scale(.9)',
+                scrollTrigger: {
+                    trigger: animetionElementOne,
+                    start: 'top',
+                    end: 'bottom',
+                    scrub: true,
+                },
+            }
+        )
+        
+        function animationGsap(element, xPosition, height){
+            gsap.fromTo(element, {opacity: 0, x: xPosition, } , 
+                {
+                    opacity: 1, x: 0,
+                    
+                    scrollTrigger: {
+                        trigger: element,
+                        start: String(height * -2),
+                        end: String(height * -0.2),
+                        scrub: true,
+                    },
+                }
+            )
+        }
+        function forEachElements(elements, xPosition){
+            elements.forEach((element, index, array)=>{
+                let heightElement = element.offsetHeight;
+                if(heightElement < 300){
+                    heightElement = 400;
+                }else if(heightElement > 500){
+                    heightElement = 500;
+                }
+                animationGsap(element, xPosition, heightElement);
+            })
+        }
+        forEachElements(animetionElementsLeft, -800);
+        forEachElements(animetionElementsRight, 300);
+    })
+}

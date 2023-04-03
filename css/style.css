@@ -132,7 +132,7 @@ header .header .header__nav .menu .menu__item.active .menu__link {
   color: #1C1D25;
 }
 header .header .header__nav .menu .menu__item {
-  border: solid #313131;
+  border: solid #414141;
   border-top: 1px;
   border-bottom: 1px;
   background-color: #1E1E1E;
@@ -147,7 +147,7 @@ header .header .header__nav .menu .menu__item .menu__link {
   padding: 0 20px;
   font-size: 15px;
   line-height: 40px;
-  color: #686868;
+  color: #7e7e7e;
   transition: color 0.5s;
 }
 header .header .header__nav .menu .menu__item:active, header .header .header__nav .menu .menu__item:focus, header .header .header__nav .menu .menu__item:hover {
@@ -362,7 +362,12 @@ main {
           user-select: none;
 }
 
-.preview.index {
+.preview.index .mask {
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background: url(../img/prev-1.png)
                 calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 100)
                 calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 100) no-repeat,
@@ -372,12 +377,6 @@ main {
   background-size: calc(var(--index) * 20);
   transition: 0.2s;
 }
-/* @media (max-width: 1200px) {
-  .preview.index {
-    background: url(../img/prev-3.png) calc(50% + (var(--index)) * -1.2 + var(--mouse-x) * 1px / 40) calc(50% + (var(--index)) * 1.2 + var(--mouse-y) * 1px / 30) no-repeat;
-    background-size: calc(var(--index) * 30);
-  }
-} */
 .preview.index .points {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -1275,6 +1274,20 @@ footer .footer .footer__button {
   background: url(../img/svg/footer__button.svg) top center no-repeat, #FFFFFF;
   background-size: 80%;
   transition: 0.3s;
+}
+footer .footer .footer__button:hover, footer .footer .footer__button:focus footer .footer .footer__button:active{
+  animation: button 1.3s infinite ease; 
+}
+@keyframes button {
+  0%{
+    background-position: center top;
+  }
+  40%{
+    background-position: center bottom;
+  }
+  100%{
+    background-position: center top;
+  }
 }
 footer .footer .footer__button:hover{
   scale: 1.2;

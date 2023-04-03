@@ -8,11 +8,21 @@
       <link rel="stylesheet" href="./css/styleTwo.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" defer></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous" defer></script>
+      <script src="./libs/gsap/gsap.min.js" defer></script>
+	<script src="./libs/gsap/ScrollTrigger.min.js" defer></script>
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <script src="./js/main.js" defer></script>
       <title>WSIT</title>
 </head>
-<body>
+
+<div class="preloader">
+      <p class="preloader__text">wsit</p>
+      <div class="preloader__progress">
+            loading...
+      </div>
+</div>
+
+<body id="preview">
       <div class="wrapper">
             <div class="content">
 <header>
@@ -30,13 +40,14 @@
 </header>
 <main>
       <div class="main">
-                  <div class="preview index" id="preview">
+                  <div class="preview index">
+                        <div class="mask"></div>
                         <div class="points">
                               <div class="point"></div>
                               <div class="point"></div>
                               <div class="point"></div>
                         </div>
-                        <div class="eye"></div>
+                        <div class="eye" style="z-index: -1 !important;"></div>
                   </div>
             <div class="list">
                         <span class="list__text">Works</span>
@@ -82,7 +93,8 @@
                   <span class="footer__copy">© 2022 WSIT</span>
             </div>
       </div>
-</footer>            </div>
+</footer>
+            </div>
       </div>
 </body>
 </html>
