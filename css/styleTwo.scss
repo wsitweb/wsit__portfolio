@@ -23,17 +23,15 @@ body{
     mask: url(../img/mask-eye.png) no-repeat    calc(48% + (var(--index)) * 2.0)
                                                 calc(9% + (var(--index)) * 3.6);
     mask-size: 26%;
-    transition: 0.2s;
     z-index: -1;
 }
 ::-webkit-scrollbar {
     display: none;
-    
 }
 .preview.index.gyroscope{
     .eye{
-        background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 80)
-                                calc(-12% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 80);
+        background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 100)
+                                calc(-8% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 100);
         top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 50);
         left: calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 50);
     }
