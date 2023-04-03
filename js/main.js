@@ -1,13 +1,3 @@
-$(document).ready(function () {
-	$('a[href^="#preview"]').click(function () {
-		var offset = $('.nav').innerHeight();
-		var target = $(this).attr('href');
-		$('html, body').animate({
-			scrollTop: $(target).offset().top - offset
-		}, 1500);
-		return false;
-	});
-});
 const listBlock = document.querySelectorAll('.list__block .list__block-num');
 var num = 0;
 while(num < listBlock.length){
@@ -44,15 +34,13 @@ window.addEventListener('scroll', () => {
 })
 $(document).ready(function(){
 	$(document).mousemove(function(event){
-		var x = event.pageX;
-		var y = event.pageY;
+		var x = Math.floor(event.pageX);
+		var y = Math.floor(event.pageY);
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {} else {
 			document.documentElement.style.setProperty('--mouse-x', x);
 			    if(y < window.innerHeight){
-			    document.documentElement.style.setProperty('--mouse-y', y);
-			    }else{
-                  	positionDefolt();
-            }
+			      document.documentElement.style.setProperty('--mouse-y', y);
+			    }
 		};
 	});
 });
@@ -80,10 +68,47 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
 		    
       window.addEventListener('deviceorientation', ()=>{
         let loc = {};
-              loc.y = Math.floor(event.beta * -1);
-              loc.x = Math.floor(event.gamma* -1);
+            //   loc.y = Math.floor(event.beta * -1);
+            //   loc.x = Math.floor(event.gamma* -1);
+              loc.y = (event.beta * -1);
+              loc.x = (event.gamma* -1);
       	document.documentElement.style.setProperty('--mouse-x', loc.x*16);
       	document.documentElement.style.setProperty('--mouse-y', (loc.y - 50) *24);
             // document.querySelector('.text').innerHTML = `${loc.y} y ${loc.x} x`;
       });
 };
+
+SmoothScroll({
+      // Время скролла 400 = 0.4 секунды
+      animationTime    : 500,
+      // Размер шага в пикселях 
+      stepSize         : 75,
+  
+      // Дополнительные настройки:
+      
+      // Ускорение 
+      accelerationDelta : 30,  
+      // Максимальное ускорение
+      accelerationMax   : 2,   
+  
+      // Поддержка клавиатуры
+      keyboardSupport   : true,  
+      // Шаг скролла стрелками на клавиатуре в пикселях
+      arrowScroll       : 50,
+  
+      // Pulse (less tweakable)
+      // ratio of "tail" to "acceleration"
+      pulseAlgorithm   : true,
+      pulseScale       : 4,
+      pulseNormalize   : 1,
+  
+      // Поддержка тачпада
+      touchpadSupport   : true,
+})
+
+$('a[href*="#preview"]').on('click', function() {
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+      }, 1000);
+      return false;
+});

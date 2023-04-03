@@ -1,0 +1,33 @@
+body{
+    overflow-x: hidden;
+}
+
+:root{
+    --color-scrollbar: white;
+}
+
+.preview.index .eye{
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background: url(../img/eye.png) no-repeat  ;
+    background-position:    calc(43% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 60)
+                            calc(-14% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 60);
+    background-size: 40%;
+
+    top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 240);
+    left: calc(49.1% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 280);
+  
+    background-color: #14EEEE;
+    width:  calc(var(--index) * 17.0);
+    height: calc(var(--index) * 17.0);
+    background-color: #14EEEE;
+    
+    mask: url(../img/mask-eye.png) no-repeat    calc(48% + (var(--index)) * 2.0)
+                                                calc(9% + (var(--index)) * 3.6);
+    mask-size: 26%;
+    transition: 0.2s;
+    z-index: -1;
+}
+::-webkit-scrollbar {
+    display: none;
+}
