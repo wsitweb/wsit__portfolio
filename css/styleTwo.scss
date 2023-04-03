@@ -28,6 +28,18 @@ body{
 ::-webkit-scrollbar {
     display: none;
 }
+.preview.index{
+    &::before{
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        width: 1000px;
+        transform: translate(-50%,-50%);
+        height: 10px;
+        background-color: #fff;
+    }
+}
 // .preview.index.gyroscope{
 //     .eye{
 //         background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 100) // left-right
