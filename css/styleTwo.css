@@ -43,7 +43,7 @@ body {
   top: calc(50% + (var(--index)) * -6 + var(--mouse-y) * 1px / 50);
 }
 .preview.index.gyroscope .mask {
-  background: url(../img/prev-1.png) calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 50) calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 70) no-repeat, url(../img/prev-2.png) calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 40) calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 60) no-repeat;
+  background: url(../img/prev-1.png) calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 50) calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 50) no-repeat, url(../img/prev-2.png) calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 40) calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 40) no-repeat;
   background-size: calc(var(--index) * 20);
 }
 
