@@ -907,7 +907,7 @@ main {
 }
 @media (max-width: 425px) {
   .list .list__blocks .list__block {
-    max-height: 260px;
+    max-height: 300px;
   }
 }
 .list .list__blocks .list__block .list__block-content {
