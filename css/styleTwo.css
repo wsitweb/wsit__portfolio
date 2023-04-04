@@ -32,7 +32,7 @@ body {
 }
 
 .preview.index.gyroscope .eye {
-  background-position: calc(43% + (var(--index)) * 2 + var(--mouse-x) * 1px / 160) calc(1% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 280);
+  background-position: calc(43% + (var(--index)) * 2 + var(--mouse-x) * 1px / 100) calc(-4% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 140);
   left: calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 30);
   top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 50);
 }
@@ -41,7 +41,7 @@ body {
   left: calc(50% + var(--mouse-x) * 1px / 60);
 }
 .preview.index.gyroscope .mask {
-  background: url(../img/prev-1.png) calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 50) calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 80) no-repeat, url(../img/prev-2.png) calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 30) calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 50) no-repeat;
+  background: url(../img/prev-1.png) calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 35) calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 55) no-repeat, url(../img/prev-2.png) calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 30) calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 50) no-repeat;
   background-size: calc(var(--index) * 20);
 }
 
