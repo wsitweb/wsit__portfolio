@@ -32,7 +32,7 @@ body {
 }
 
 .preview.index.gyroscope .eye {
-  background-position: calc(60% + (var(--index)) * 2 + var(--mouse-x) * 1px / 60) calc(50% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 80);
+  background-position: calc(40% + (var(--index)) * 2 + var(--mouse-x) * 1px / 60) calc(20% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 80);
   left: calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 30);
   top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 50);
 }
