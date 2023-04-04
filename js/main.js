@@ -170,3 +170,6 @@ if(!ScrollTrigger.isTouch){
         forEachElements(animetionElementsRight, 300);
     })
 }
+
+
+// document.querySelector('.preview.index').classList.add('gyroscope');
