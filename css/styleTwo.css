@@ -40,7 +40,7 @@ body {
 }
 .preview.index.gyroscope .points {
   left: calc(50% + var(--mouse-x) * 1px / 30);
-  top: calc(50% + (var(--index)) * -6 + var(--mouse-y) * 1px / 50);
+  top: calc(60% + (var(--index)) * -6 + var(--mouse-y) * 1px / 50);
 }
 .preview.index.gyroscope .mask {
   background: url(../img/prev-1.png) calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 80) calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 40) no-repeat, url(../img/prev-2.png) calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 40) calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 20) no-repeat;
