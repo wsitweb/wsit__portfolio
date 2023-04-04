@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="./css/style.css">
+      <link rel="stylesheet" href="./css/styleTwo.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous" defer></script>
+      <script src="./libs/gsap/gsap.min.js" defer></script>
+	<script src="./libs/gsap/ScrollTrigger.min.js" defer></script>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <script src="./js/main.js" defer></script>
-      <title>ws</title>
+      <title>WSIT</title>
 </head>
-<body>
+
+<div class="preloader">
+      <p class="preloader__text">wsit</p>
+      <div class="preloader__progress">
+            loading...
+      </div>
+</div>
+
+<body id="preview">
       <div class="wrapper">
             <div class="content">
 <header>
@@ -28,12 +41,15 @@
 </header>
 <main>
       <div class="main">
-            <div class="preview contact" id="preview">
+            <div class="preview index">
+                  <div class="mask"></div>
                   <div class="points">
                         <div class="point"></div>
                         <div class="point"></div>
                         <div class="point"></div>
                   </div>
+                  <div class="eye"></div>
+                  <div class="headphones"></div>
             </div>
             <div class="list contact">
                         <span class="list__text">Send me an email</span>

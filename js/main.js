@@ -166,8 +166,10 @@ if(!ScrollTrigger.isTouch){
                 animationGsap(element, xPosition, heightElement);
             })
         }
-        forEachElements(animetionElementsLeft, -800);
-        forEachElements(animetionElementsRight, 300);
+        if(animetionElementsLeft || animetionElementsRight){
+            forEachElements(animetionElementsLeft, -800);
+            forEachElements(animetionElementsRight, 300);    
+        }
     })
 }
 
