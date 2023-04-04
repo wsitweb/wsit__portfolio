@@ -33,30 +33,18 @@ body {
   display: none;
 }
 
-.preview.index::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  width: 1000px;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  height: 10px;
-  background-color: #fff;
+.preview.index.gyroscope .eye {
+  background-position: calc(43% + (var(--index)) * 2 + var(--mouse-x) * 1px / 120) calc(1% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 60);
+  left: calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 20);
+  top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 40);
 }
-
-.preview.index.gyroscope::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  width: 1000px;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  height: 10px;
-  background-color: #fff;
+.preview.index.gyroscope .points {
+  left: calc(50% + var(--mouse-x) * 1px / 50);
+  top: calc(50% + (var(--index)) * -6 + var(--mouse-y) * 1px / 30);
+}
+.preview.index.gyroscope .mask {
+  background: url(../img/prev-1.png) calc(49% + (var(--index)) * -0.8 + var(--mouse-x) * 1px / 40) calc(50% + (var(--index)) * 1.8 + var(--mouse-y) * 1px / 80) no-repeat, url(../img/prev-2.png) calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 20) calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 40) no-repeat;
+  background-size: calc(var(--index) * 20);
 }
 
 .preloader {
