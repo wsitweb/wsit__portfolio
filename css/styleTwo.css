@@ -14,8 +14,6 @@ body {
   background: url(../img/eye.png) no-repeat;
   background-position: calc(43% + (var(--index)) * 2 + var(--mouse-x) * 1px / 60) calc(-16% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 30);
   background-size: 40%;
-  -webkit-mask-size: 26%;
-          mask-size: 26%;
   top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 90);
   left: calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 50);
   background-color: #000000;
@@ -24,8 +22,8 @@ body {
   -webkit-transition: left 0.2s, top 0.2s, background-position 0.05s;
   -o-transition: left 0.2s, top 0.2s, background-position 0.05s;
   transition: left 0.2s, top 0.2s, background-position 0.05s;
-  -webkit-mask: url(../img/mask-eye.png) no-repeat calc(48% + (var(--index)) * 2) calc(9% + (var(--index)) * 3.6);
-          mask: url(../img/mask-eye.png) no-repeat calc(48% + (var(--index)) * 2) calc(9% + (var(--index)) * 3.6);
+  -webkit-mask: url(../img/mask-eye.png) no-repeat calc(48% + (var(--index)) * 2) calc(9% + (var(--index)) * 3.6)/26%;
+          mask: url(../img/mask-eye.png) no-repeat calc(48% + (var(--index)) * 2) calc(9% + (var(--index)) * 3.6)/26%;
   z-index: -1;
 }
 
@@ -37,9 +35,6 @@ body {
   background-position: calc(43% + (var(--index)) * 2 + var(--mouse-x) * 1px / 160) calc(1% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 280);
   left: calc(49.1% + (var(--index)) * 2 + var(--mouse-x) * 1px / 30);
   top: calc(51% + (var(--index)) * 3.6 + var(--mouse-y) * 1px / 50);
-  background-size: 40%;
-  -webkit-mask-size: 26%;
-          mask-size: 26%;
 }
 .preview.index.gyroscope .points {
   top: calc(50% + (var(--index)) * -6 + var(--mouse-y) * 1px / 200);
