@@ -43,6 +43,7 @@ body {
   flex-direction: column;
   text-align: center;
   line-height: 1;
+  overflow-X: hidden;
 }
 
 .wrapper-block {
