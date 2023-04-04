@@ -260,9 +260,9 @@ header .header .header__burger::after {
 }
 @media (max-width: 1090px) {
   header .header .header__logo {
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
     opacity: 30%;
   }
   header .header .header__logo-text {
@@ -1177,7 +1177,7 @@ footer .footer .footer__copy {
   position: fixed;
 }
 .сling .header{
-  padding: 20px 0;
+  padding: 20px 30px;
 }
 
 @media (min-width: 1470px) {

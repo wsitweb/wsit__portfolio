@@ -1,4 +1,5 @@
-const listBlock = document.querySelectorAll('.list__block .list__block-num');
+try{
+      const listBlock = document.querySelectorAll('.list__block .list__block-num');
 var num = 0;
 while(num < listBlock.length){
       num++;
@@ -58,13 +59,16 @@ function burgerClick(){
       }else{
             headerMenu.className = 'header__nav';
             headerButton.className = 'header__burger';
-            document.body.removeAttribute("style");
+            document.body.style.overflow = 'auto';
       }
 }
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
     		.test(navigator.userAgent)) {
-      document.querySelector('.preview.index').classList.add('gyroscope');
+      let preview = document.querySelector('.preview.index');
+      if(preview){
+            preview.classList.add('gyroscope');
+      }
       window.addEventListener('deviceorientation', ()=>{
         let loc = {};
             //   loc.y = Math.floor(event.beta * -1);
@@ -75,35 +79,89 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phon
       	document.documentElement.style.setProperty('--mouse-y', (loc.y - 50) *24);
             // document.querySelector('.text').innerHTML = `${loc.y} y ${loc.x} x`;
       });
-};
+}else{
+      gsap.registerPlugin(ScrollTrigger);
 
-SmoothScroll({
-      // Время скролла 400 = 0.4 секунды
-      animationTime    : 800,
-      // Размер шага в пикселях 
-      stepSize         : 75,
-  
-      // Дополнительные настройки:
-      
-      // Ускорение 
-      accelerationDelta : 30,  
-      // Максимальное ускорение
-      accelerationMax   : 2,   
-  
-      // Поддержка клавиатуры
-      keyboardSupport   : true,  
-      // Шаг скролла стрелками на клавиатуре в пикселях
-      arrowScroll       : 50,
-  
-      // Pulse (less tweakable)
-      // ratio of "tail" to "acceleration"
-      pulseAlgorithm   : true,
-      pulseScale       : 4,
-      pulseNormalize   : 1,
-  
-      // Поддержка тачпада
-      touchpadSupport   : true,
-})
+      if(!ScrollTrigger.isTouch){
+          window.addEventListener('load', ()=>{
+            
+            let animetionElementOne = '.preview';
+            let animetionElementsLeft = document.querySelectorAll('.list__block:nth-child(odd)');
+            let animetionElementsRight = document.querySelectorAll('.list__block:nth-child(even)');
+              
+              gsap.fromTo(animetionElementOne, {opacity: 1, transform: 'scale(1)', },
+                  {
+                      opacity: 0,
+                      transform: 'scale(.9)',
+                      scrollTrigger: {
+                          trigger: animetionElementOne,
+                          start: 'top',
+                          end: 'bottom',
+                          scrub: true,
+                      },
+                  }
+              )
+              
+              function animationGsap(element, xPosition, height){
+                  gsap.fromTo(element, {opacity: 0, x: xPosition, } , 
+                      {
+                          opacity: 1, x: 0,
+                          
+                          scrollTrigger: {
+                              trigger: element,
+                              start: String(height * -2),
+                              end: String(height * -0.2),
+                              scrub: true,
+                          },
+                      }
+                  )
+              }
+              function forEachElements(elements, xPosition){
+                  elements.forEach((element, index, array)=>{
+                      let heightElement = element.offsetHeight;
+                      if(heightElement < 300){
+                          heightElement = 400;
+                      }else if(heightElement > 500){
+                          heightElement = 500;
+                      }
+                      animationGsap(element, xPosition, heightElement);
+                  })
+              }
+              if(animetionElementsLeft || animetionElementsRight){
+                  forEachElements(animetionElementsLeft, -800);
+                  forEachElements(animetionElementsRight, 300);    
+              }
+          })
+      }
+      SmoothScroll({
+            // Время скролла 400 = 0.4 секунды
+            animationTime    : 800,
+            // Размер шага в пикселях 
+            stepSize         : 75,
+        
+            // Дополнительные настройки:
+            
+            // Ускорение 
+            accelerationDelta : 30,  
+            // Максимальное ускорение
+            accelerationMax   : 2,   
+        
+            // Поддержка клавиатуры
+            keyboardSupport   : true,  
+            // Шаг скролла стрелками на клавиатуре в пикселях
+            arrowScroll       : 50,
+        
+            // Pulse (less tweakable)
+            // ratio of "tail" to "acceleration"
+            pulseAlgorithm   : true,
+            pulseScale       : 4,
+            pulseNormalize   : 1,
+        
+            // Поддержка тачпада
+            touchpadSupport   : true,
+      })
+}
+
 
 $('a[href*="#preview"]').on('click', function() {
       $('html, body').animate({
@@ -112,66 +170,13 @@ $('a[href*="#preview"]').on('click', function() {
       return false;
 });
 
-let preloader = document.querySelector('.preloader');
 window.addEventListener('load', ()=>{
+      let preloader = document.querySelector('.preloader');
       document.body.style.overflowY = 'auto';
       preloader.style.opacity = '0';
       setTimeout(function(){preloader.style.display = 'none';}, 1000);
 })
 
-gsap.registerPlugin(ScrollTrigger);
-
-if(!ScrollTrigger.isTouch){
-    window.addEventListener('load', ()=>{
-
-        let animetionElementOne = '.preview';
-        let animetionElementsLeft = document.querySelectorAll('.list__block:nth-child(odd)');
-        let animetionElementsRight = document.querySelectorAll('.list__block:nth-child(even)');
-        
-        gsap.fromTo(animetionElementOne, {opacity: 1, transform: 'scale(1)', },
-            {
-                opacity: 0,
-                transform: 'scale(.9)',
-                scrollTrigger: {
-                    trigger: animetionElementOne,
-                    start: 'top',
-                    end: 'bottom',
-                    scrub: true,
-                },
-            }
-        )
-        
-        function animationGsap(element, xPosition, height){
-            gsap.fromTo(element, {opacity: 0, x: xPosition, } , 
-                {
-                    opacity: 1, x: 0,
-                    
-                    scrollTrigger: {
-                        trigger: element,
-                        start: String(height * -2),
-                        end: String(height * -0.2),
-                        scrub: true,
-                    },
-                }
-            )
-        }
-        function forEachElements(elements, xPosition){
-            elements.forEach((element, index, array)=>{
-                let heightElement = element.offsetHeight;
-                if(heightElement < 300){
-                    heightElement = 400;
-                }else if(heightElement > 500){
-                    heightElement = 500;
-                }
-                animationGsap(element, xPosition, heightElement);
-            })
-        }
-        if(animetionElementsLeft || animetionElementsRight){
-            forEachElements(animetionElementsLeft, -800);
-            forEachElements(animetionElementsRight, 300);    
-        }
-    })
+}catch(stringError){
+      alert(stringError)
 }
-
-
-// document.querySelector('.preview.index').classList.add('gyroscope');

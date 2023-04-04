@@ -84,22 +84,13 @@ body{
     position: fixed;
     overflow: hidden;
     z-index: 1000000;
-    &__text{
-        text-align: center;
-        color: white;
-        text-transform: uppercase;
-        letter-spacing: 34px;
-        line-height: 100vh;
-        user-select: none;
-        font-size: 25px;
-    }
     &__progress{
-        text-align: center;
+        text-align: left;
         width: 20ch;
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, 200%);
+        transform: translate(-50%, 50%);
         text-transform: none;
         letter-spacing: 10px;
         overflow: hidden;
@@ -109,7 +100,6 @@ body{
     }
     &.disable{
         transition: 1s;
-        opacity: 0;
     }
 }
 @keyframes loading{

@@ -75,27 +75,15 @@ body {
   overflow: hidden;
   z-index: 1000000;
 }
-.preloader__text {
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 34px;
-  line-height: 100vh;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  font-size: 25px;
-}
 .preloader__progress {
-  text-align: center;
+  text-align: left;
   width: 20ch;
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, 200%);
-      -ms-transform: translate(-50%, 200%);
-          transform: translate(-50%, 200%);
+  -webkit-transform: translate(-50%, 50%);
+      -ms-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
   text-transform: none;
   letter-spacing: 10px;
   overflow: hidden;
@@ -110,7 +98,6 @@ body {
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
-  opacity: 0;
 }
 
 @-webkit-keyframes loading {
