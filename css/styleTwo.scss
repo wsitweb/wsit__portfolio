@@ -40,6 +40,18 @@ body{
         background-color: #fff;
     }
 }
+.preview.index.gyroscope{
+    &::before{
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        width: 1000px;
+        transform: translate(-50%,-50%);
+        height: 10px;
+        background-color: #fff;
+    }
+}
 // .preview.index.gyroscope{
 //     .eye{
 //         background-position:    calc(46% + (var(--index)) * 2.0 + var(--mouse-x) * 1px / 100) // left-right
@@ -90,6 +102,7 @@ body{
         overflow: hidden;
         animation: loading 2s infinite steps(4);
         transition: 0;
+        height: 4ch;
     }
     &.disable{
         transition: 1s;

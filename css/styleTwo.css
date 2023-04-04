@@ -46,6 +46,19 @@ body {
   background-color: #fff;
 }
 
+.preview.index.gyroscope::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  width: 1000px;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 10px;
+  background-color: #fff;
+}
+
 .preloader {
   -webkit-transition: 1s opacity ease;
   -o-transition: 1s opacity ease;
@@ -86,6 +99,7 @@ body {
   -webkit-transition: 0;
   -o-transition: 0;
   transition: 0;
+  height: 4ch;
 }
 .preloader.disable {
   -webkit-transition: 1s;
